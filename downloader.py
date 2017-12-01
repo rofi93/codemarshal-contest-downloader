@@ -23,7 +23,6 @@ while True:
         title = list_group.find('h4').get_text()
         standing_url = CODEMARSHAL_URL + list_group['href'] + '/' + STANDINGS
 
-        path = None
         title = '_'.join(str(title).split())
 
         if os.path.exists(title):
@@ -31,9 +30,6 @@ while True:
 
         os.makedirs(title)
         path = os.path.realpath(title)
-
-        if path is None:
-            continue
 
         page_num = 1
         while True:
