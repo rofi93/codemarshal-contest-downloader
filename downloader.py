@@ -37,7 +37,7 @@ while True:
             html = requests.get(url)
             table = BeautifulSoup(html.text, 'lxml').find('tbody')
 
-            if len(table) == 0:
+            if table is None or len(table) == 0:
                 break
 
             from_url(url, path + '/' + 'standing-' + str(page_num) + '.pdf')
